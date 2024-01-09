@@ -1,1 +1,0 @@
-select p.ToolID,min(Deskripsi)Tool,count(*) Stok from ToolSPP_ToolNew p left join ToolSPP_Toolhistorydetail dt on p.ToolNewID=dt.ToolNewID and dt.Toolhistorykembaliid is null left join ToolSPP_Tool t on p.Toolid=t.Toolid where p.deleted is null and dt.toolhistoryid is null group by p.Toolid
