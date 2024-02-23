@@ -1,0 +1,11 @@
+Instance : sqldev_idkradev_toolssystem.dbaas.sdi.pmi\DEV
+
+Database : IDKRADEV_ToolsSystem
+
+Reader Account :ToolsSystem_Reader
+
+Password : Reader(2023)
+
+Writer Account : ToolsSystem_Writer
+
+Password:  Writer(2023)
