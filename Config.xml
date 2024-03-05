@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table1>
+    <Servername>localhost\mssqlexpress</Servername>
+    <Username>hms</Username>
+    <Password>GHsauDGEclKIB5CbaQHCNw==</Password>
+    <Database>SBU_RRP</Database>
+  
+  </Table1>
+</NewDataSet>
