@@ -11,3 +11,6 @@ Writer Account : ToolsSystem_Writer
 Password:  Writer(2023)
 
 SELECT name FROM sqlite_master WHERE type='table' and name<>'sqlite_sequence'
+
+
+insert into tool (toolid,kode) values (1,'2')
