@@ -1,0 +1,16 @@
+INSERT [dbo].[CenterLine] ([CenterLineID], [Tanggal], [BusinessUnit], [Machine], [Tipe], [Parameter], [Value], [WarningLimit], [AlarmLimit]) VALUES (1, CAST(N'2024-03-07T06:25:03.917' AS DateTime), N'BU13', N'LU13-1', N'Packer', N'CK283', CAST(75.60 AS Decimal(20, 2)), CAST(50.00 AS Decimal(20, 2)), CAST(70.00 AS Decimal(20, 2)))
+GO
+INSERT [dbo].[CenterLine] ([CenterLineID], [Tanggal], [BusinessUnit], [Machine], [Tipe], [Parameter], [Value], [WarningLimit], [AlarmLimit]) VALUES (2, CAST(N'2024-03-07T06:25:03.917' AS DateTime), N'BU14', N'LU14-1', N'Maker', N'CK78', CAST(55.80 AS Decimal(20, 2)), CAST(10.00 AS Decimal(20, 2)), CAST(50.00 AS Decimal(20, 2)))
+GO
+INSERT [dbo].[CenterLine] ([CenterLineID], [Tanggal], [BusinessUnit], [Machine], [Tipe], [Parameter], [Value], [WarningLimit], [AlarmLimit]) VALUES (3, CAST(N'2024-03-07T06:25:03.917' AS DateTime), N'BU14', N'LU14-2', N'Packer', N'TP2837', CAST(78.00 AS Decimal(20, 2)), CAST(100.00 AS Decimal(20, 2)), CAST(120.00 AS Decimal(20, 2)))
+GO
+INSERT [dbo].[CenterLine] ([CenterLineID], [Tanggal], [BusinessUnit], [Machine], [Tipe], [Parameter], [Value], [WarningLimit], [AlarmLimit]) VALUES (4, CAST(N'2024-03-07T06:25:03.917' AS DateTime), N'BU13', N'LU13-2', N'Maker', N'TP2837', CAST(79.00 AS Decimal(20, 2)), CAST(80.00 AS Decimal(20, 2)), CAST(100.00 AS Decimal(20, 2)))
+GO
+INSERT [dbo].[CenterLine] ([CenterLineID], [Tanggal], [BusinessUnit], [Machine], [Tipe], [Parameter], [Value], [WarningLimit], [AlarmLimit]) VALUES (5, CAST(N'2024-03-07T06:25:03.917' AS DateTime), N'BU14', N'LU14-2', N'Packer', N'AK23', CAST(55.20 AS Decimal(20, 2)), CAST(40.00 AS Decimal(20, 2)), CAST(100.00 AS Decimal(20, 2)))
+GO
+INSERT [dbo].[CenterLine] ([CenterLineID], [Tanggal], [BusinessUnit], [Machine], [Tipe], [Parameter], [Value], [WarningLimit], [AlarmLimit]) VALUES (6, CAST(N'2024-03-07T06:25:03.917' AS DateTime), N'BU14', N'LU14-3', N'Maker', N'CB23', CAST(110.00 AS Decimal(20, 2)), CAST(40.00 AS Decimal(20, 2)), CAST(100.00 AS Decimal(20, 2)))
+GO
+INSERT [dbo].[CenterLine] ([CenterLineID], [Tanggal], [BusinessUnit], [Machine], [Tipe], [Parameter], [Value], [WarningLimit], [AlarmLimit]) VALUES (7, CAST(N'2024-03-07T06:25:03.917' AS DateTime), N'BU14', N'LU14-3', N'Packer', N'CB8723', CAST(23.00 AS Decimal(20, 2)), CAST(10.00 AS Decimal(20, 2)), CAST(50.00 AS Decimal(20, 2)))
+GO
+INSERT [dbo].[CenterLine] ([CenterLineID], [Tanggal], [BusinessUnit], [Machine], [Tipe], [Parameter], [Value], [WarningLimit], [AlarmLimit]) VALUES (8, CAST(N'2024-03-07T06:25:03.917' AS DateTime), N'BU14', N'LU14-1', N'Packer', N'CK78', CAST(20.00 AS Decimal(20, 2)), CAST(50.00 AS Decimal(20, 2)), CAST(100.00 AS Decimal(20, 2)))
+GO
