@@ -14,3 +14,82 @@ SELECT name FROM sqlite_master WHERE type='table' and name<>'sqlite_sequence'
 
 
 insert into tool (toolid,kode) values (1,'2')
+
+
+
+CREATE TABLE [dbo].[CenterLine](
+	[CenterLineID] [int] IDENTITY(1,1) NOT NULL,
+	[Tanggal] [datetime] NULL,
+	[BusinessUnit] [varchar](200) NULL,
+	[Machine] [varchar](200) NULL,
+	[Tipe] [varchar](200) NULL,
+	[Parameter] [varchar](200) NULL,
+	[Value] [decimal](20, 2) NULL,
+	[WarningLimit] [decimal](20, 2) NULL,
+	[AlarmLimit] [decimal](20, 2) NULL,
+ CONSTRAINT [PK_CenterLine] PRIMARY KEY CLUSTERED 
+(
+	[CenterLineID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[Dokumen](
+	[DokumenID] [int] IDENTITY(1,1) NOT NULL,
+	[Waktu] [datetime] NULL,
+	[Deskripsi] [varchar](200) NULL,
+	[FileName] [varchar](200) NULL,
+	[Deleted] [datetime] NULL,
+	[DocName] [varchar](200) NULL,
+ CONSTRAINT [PK_Dokumen] PRIMARY KEY CLUSTERED 
+(
+	[DokumenID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+CREATE view [dbo].[_CenterLine]
+as
+select CenterLineID,Tanggal,BusinessUnit,Machine,Tipe,Parameter,Value,WarningLimit,AlarmLimit,
+CASE WHEN (Value<WarningLimit) THEN 1 ELSE 0 END AS normal
+,CASE WHEN (Value>=WarningLimit and Value<alarmlimit) THEN 1 ELSE 0 END AS warning
+,CASE WHEN (Value>=alarmlimit) THEN 1 ELSE 0 END AS alarm from centerline
+GO
+
+CREATE view [dbo].[_History_Sensor]
+as
+select  
+	CASE
+		WHEN DATEPART(HOUR, Waktu) < 6 THEN 3
+        WHEN DATEPART(HOUR, Waktu) < 14 THEN 1
+		WHEN DATEPART(HOUR, Waktu) < 22 THEN 2
+        ELSE 3
+    END AS Shift,
+	convert(date,dateadd(hour,-6,waktu),0) Tanggal,
+	Waktu WaktuDate,SensorID,m.deskripsi Motor,mc.deskripsi LinkUp,bu.deskripsi BusinessUnit,Tipe,
+	convert(varchar(30),Waktu,120)Waktu,convert(decimal(20,2),
+    convert(decimal(20,3),X,0)/1000,0) X_Actual, convert(decimal(20,2),convert(decimal(20,3),Z,0)/1000,0) Z_Actual,
+    convert(decimal(20,2),convert(decimal(20,3),X_Acc,0)/1000,0) X_Acc,  convert(decimal(20,2),convert(decimal(20,3),Z_Acc,0)/1000,0) Z_Acc,
+    convert(decimal(20,2),Temp,0)/100 Temp_Actual,
+	CASE WHEN (X > X_Alarm or Z > Z_Alarm or Temp > temp_alarm*100) THEN 1 ELSE 0 END AS Total_OOL,
+	CASE WHEN (X > X_Alarm or Z > Z_Alarm) THEN 1 ELSE 0 END AS Vibration_OOL, 
+	CASE WHEN Temp > temp_alarm*100 THEN 1 ELSE 0 END AS Temp_OOL,
+	Status,
+    convert(decimal(20,2),convert(decimal(20,3),X_Warn,0)/1000,0) X_Warn,convert(decimal(20,2),
+    convert(decimal(20,3),X_Alarm,0)/1000,0) X_Alarm,
+    convert(decimal(20,2),convert(decimal(20,3),Z_Warn,0)/1000,0) Z_Warn,
+    convert(decimal(20,2),convert(decimal(20,3),Z_Alarm,0)/1000,0) Z_Alarm,    
+
+     convert(decimal(20,2),convert(decimal(20,3),X_Acc_Warn,0)/1000,0) X_Acc_Warn,
+     convert(decimal(20,2),convert(decimal(20,3),X_Acc_Alarm,0)/1000,0) X_Acc_Alarm,
+     convert(decimal(20,2),convert(decimal(20,3),Z_Acc_Warn,0)/1000,0) Z_Acc_Warn,
+     convert(decimal(20,2),convert(decimal(20,3),Z_Acc_Alarm,0)/1000,0) Z_Acc_Alarm,Temp_Alarm,Temp_Warn,Running,BatasKuning,BatasMerah from history p
+	 left join motor m on p.SensorID=m.Number left join machine mc on m.MachineID=mc.MachineID left join BusinessUnit bu on mc.BusinessUnitID=bu.BusinessUnitID
+
+GO
+
+CREATE view [dbo].[_Motor]
+as
+select p.Deskripsi LinkUp,bu.Deskripsi BusinessUnit,m.Deskripsi Motor,Tipe,Number,BatasKuning,BatasMerah from machine p 
+left join motor m on p.machineid=m.machineid left join BusinessUnit bu on p.BusinessUnitID=bu.BusinessUnitID where number is not null
+GO
