@@ -1,14 +1,11 @@
-create view [dbo].[_Following_Error]
-as
-select  
-	CASE
-		WHEN DATEPART(HOUR, Waktu) < 6 THEN 3
-        WHEN DATEPART(HOUR, Waktu) < 14 THEN 1
-		WHEN DATEPART(HOUR, Waktu) < 22 THEN 2
-        ELSE 3
-    END AS Shift,
-	convert(date,dateadd(hour,-6,waktu),0) Tanggal,
-	Waktu WaktuDate,m.deskripsi Motor,mc.deskripsi LinkUp,bu.deskripsi BusinessUnit,Tipe,
-	convert(varchar(30),Waktu,120)Waktu,FollowingError from FollowingError p
-	 left join motor m on p.motorid=m.motorid left join machine mc on m.MachineID=mc.MachineID left join BusinessUnit bu on mc.BusinessUnitID=bu.BusinessUnitID
+CREATE TABLE [dbo].[FollowingError](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Waktu] [datetime] NULL,
+	[MotorID] [int] NULL,
+	[FollowingError] [varchar](200) NULL,
+ CONSTRAINT [PK_FollowingError] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
