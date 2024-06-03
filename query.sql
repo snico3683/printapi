@@ -1,1 +1,2 @@
-dateadd(hour,-6,cbldate), CASE WHEN DATEPART(hour, DATEADD(hour, -6, cbldate)) >= 0 AND DATEPART(hour, DATEADD(hour, -6, cbldate)) < 8 THEN '1' WHEN DATEPART(hour, DATEADD(hour, -6, cbldate)) >= 8 AND DATEPART(hour, DATEADD(hour, -6, cbldate)) < 16 THEN '2' WHEN DATEPART(hour, DATEADD(hour, -6, cbldate)) >= 16 AND DATEPART(hour, DATEADD(hour, -6, cbldate)) < 24 THEN '3' END AS shift,
+select SUBSTRING(barcode,23,6)Tanggal,SUBSTRING(barcode,35,6)Waktu,SUBSTRING(barcode,33,2)CP,
+        dtmReject,ActualWeight,Barcode,RejectReason,convert(decimal(10,2),null,0) VerifiedBerat,convert(datetime,null,0)VerifiedWaktu from tblRejectCaseLog
