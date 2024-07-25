@@ -1,2 +1,0 @@
-select SUBSTRING(barcode,23,6)Tanggal,SUBSTRING(barcode,35,6)Waktu,SUBSTRING(barcode,33,2)CP,
-        dtmReject,ActualWeight,Barcode,RejectReason,convert(decimal(10,2),null,0) VerifiedBerat,convert(datetime,null,0)VerifiedWaktu from tblRejectCaseLog
