@@ -12,3 +12,5 @@ Password : D3b!9790244b1$B
 Server: sqlprd_plsa_idkrasql01.dbiaas.sdi.pmi
 DB: SPA
 Table: dbo.tbl_OPC_Machine_Data
+
+3733762812612611899117393262213188166153146141142248225151201
