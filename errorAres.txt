@@ -1,0 +1,89 @@
+Emergency Stop P1
+Pusher Infeed R1
+Pusher Reject Barcode
+Pusher Reject Weigher
+Pusher Buffer To Return
+Pusher Return To Buffer
+Error FB Sorting Process
+Error FB Sorting Calculation
+Error FB Sorting Management R1
+Error FB Reject Barcode Management
+Error FB Reject Weight Management
+Motor Conveyor Buffer 1 Fault 
+Motor Conveyor Buffer 2 Fault
+Motor Conveyor Buffer 3 Fault
+Motor Conveyor Buffer 4 Fault
+Motor Conveyor Buffer 5 Fault
+Motor Conveyor Buffer 6 Fault
+Motor Conveyor Return 1 Fault
+Motor Conveyor Return 2 Fault
+Motor Conveyor Return 3 Fault
+Motor Conveyor Return 4 Fault
+Motor Conveyor Return 5 Fault
+Motor Conveyor TTC 1 Fault
+Motor Conveyor Curve Reject Fault
+Motor Conveyor TTC 2 Fault
+Warning Sorting Full
+Motor 1 Conveyor Infeed R1 Fault
+Motor 2 Conveyor Infeed R1 Fault
+Motor Conveyor StopAndGo R1 Fault
+Motor Conveyor Picking R1 Fault
+Conveyor Reject R1 Full
+Box Missing at Gripper
+Emergency Stop Robot is Active
+Robot Execution Error
+Robot Error Supervision
+Error Clamp Gripper When Open
+Error Claw Gripper When Open
+Error Claw Gripper When Close
+Connection With Robot 1 Disconnected
+Robot 1 In Manual Mode
+Safety Door 1 Open 
+Safety Door 2 Open
+Emergency Stop Panel 2 Active
+Main Air Pressure Low
+Motor Placing Robot 1 Line 1 Fault
+Motor Placing Robot 1 Line 2 Fault
+Motor Placing Robot 1 Line 3 Fault
+Motor Placing Robot 1 Line 4 Fault
+Pallet Placing Robot 1 Line 1 Jammed
+Pallet Placing Robot 1 Line 2 Jammed
+Pallet Placing Robot 1 Line 3 Jammed
+Pallet Placing Robot 1 Line 4 Jammed
+Error Collect Barcode Line 1
+Error Collect Barcode Line 2
+Error Collect Barcode Line 3
+Error Collect Barcode Line 4
+Error Shuttle Empty Pallet
+Error Shuttle Load Pallet
+Limit Shuttle Left
+Limit Shuttle Right
+Sensor Distance Interupted
+Motor Drive Shuttle Fault
+Motor Empty Shuttle Fault
+Motor Load Shuttle Fault
+Sensor End Pallet Active When Shuttle Move
+Motor Infeed 1 Dispenser Fault
+Motor Infeed 2 Dispenser Fault
+Motor Dispenser Fault
+Pneumatic Horizontal Dispenser Error Advanced
+Pneumatic Horizontal Dispenser Error Retract
+Pneumatic Vertical Dispenser Error Retract
+Pneumatic Vertical Dispenser Error Advanced
+Emergency Stop Dispenser Active
+LightCurtain Infeed Dispenser Active
+Air Pressure Dispenser Low
+Motor Before Wrapping Fault
+Motor Outfeed 1 Fault
+Motor Outfeed 2 Fault
+Motor Outfeed 3 Fault
+Motor Outfeed 4 Fault
+Outfeed Before Wrapper Jammed
+Pallet Outfeed 1 Jammed
+Pallet Outfeed 2 Jammed
+Pallet Outfeed 3 Jammed
+Pallet Outfeed 4 Jammed
+Safety Door 3 Open
+LightCurtain Outfeed Active
+Emergency Stop Wrapper Active
+Labeller Status Error
